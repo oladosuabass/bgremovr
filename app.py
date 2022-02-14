@@ -9,10 +9,17 @@ from io import BytesIO
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import pprint
 
 app = Flask(__name__)
 
 UPLOAD_FOLDER = ''
+
+# export API_KEY=
+removebg_api_key = os.environ.get("API_KEY1")
+cloudinary_api_key = os.environ.get("API_KEY2")
+cloudinary_api_secret = os.environ.get("API_KEY3")
+
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -71,5 +78,7 @@ def uploaded(name):
     return render_template('error.html', error=response.text)
   return render_template('uploaded.html', name=p, response=x['resources'][0]['secure_url'])
 
-# if __name__ == '__main__':
-#   app.run(debug=True)
+
+
+if __name__ == '__main__':
+  app.run(debug=True)
