@@ -58,7 +58,7 @@ def uploaded(name):
       'https://api.remove.bg/v1.0/removebg',
       files={'image_file': open(p, 'rb')},
       data={'size': 'auto'},
-      headers={'X-Api-Key': 'rpSnxLVxhXvMmU6a5TcNaiCj'},
+      headers={'X-Api-Key': removebg_api_key},
     )
     if response.status_code == requests.codes.ok:
         with open('no-bg.png', 'wb') as out:
@@ -66,8 +66,8 @@ def uploaded(name):
 
         cloudinary.config( 
           cloud_name = "bg-remove", 
-          api_key = "683241377425755", 
-          api_secret = "--SnMyUylv1MgRrx_eiU5As1jXU",
+          api_key = cloudinary_api_key, 
+          api_secret = cloudinary_api_secret,
           secure = True
         )
         cloudinary.uploader.upload("no-bg.png", public_id = "no_bg")
