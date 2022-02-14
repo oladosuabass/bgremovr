@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %} Download image {% endblock %}
+
+{% block content %}
+
+<section id="space">
+  <div class="container" id="base-card">
+    <div class="row">
+      <div class="col">
+        <h5>Background removed preview</h5>
+        <img id="imged" src="{{ response }}" alt="no_bg_image" width="auto" height="auto">
+      </div>
+      <div class="col">
+        <h5>Download image</h5>
+        <button id="downloadImage" class="btn btn-primary">Download</button>
+        <p id="grey">Preview image 500px x 500px</p>
+        <button id="downloadImage" class="btn btn-outline-primary" disabled>Download HD</button>
+        <p id="grey">COMING SOON</p>
+        <p id="grey">Up to 25 megapixels</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+  <script>
+    const btn = document.getElementById('downloadImage');
+    const url = "{{ response }}";
+
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      downloadImage(url);
+    })
+
+
+    function downloadImage(url) {
+      fetch(url, {
+        mode : 'cors',
+      })
+        .then(response => response.blob())
+        .then(blob => {
+        let blobUrl = window.URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.download = url.replace(/^.*[\\\/]/, '');
+        a.href = blobUrl;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      })
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  {% endblock %}
+  

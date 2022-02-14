@@ -1,0 +1,238 @@
+body{
+  max-width: auto;
+  width: auto;
+}
+input[type="file"] {
+  display: none;
+}
+
+
+span{
+  font-family: 'Allerta Stencil', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Spartan', sans-serif;
+  text-decoration: underline gray;
+}
+
+#center{
+  text-align: center;
+}
+
+#base-card{
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 2rem auto;
+  margin-top: 8em;
+  max-width: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+#cent{
+  text-align: center;
+}
+
+#imged {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 25px;
+  width: 500px;
+}
+#grey{
+  color: grey;
+  font-size: 8px;
+}
+
+#space{
+  margin-top: 4em;
+}
+
+#base-card{
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 2rem auto;
+  margin-top: 8em;
+  max-width: auto;
+  text-align: center;
+  justify-content: center;
+}
+/* #upload{
+
+} */
+
+#upload-button{
+  margin-bottom: 1em;
+}
+
+#front{
+  font-size: 50px;
+  font-weight: 900;
+  color: gray;
+  margin: 1em 1em;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Spartan', sans-serif;
+}
+
+#front-img{
+  margin: 1em 5em;
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#show{
+  font-weight: bold;
+  margin-top: 2em ;
+  margin-bottom: 1em;
+}
+section{
+  text-align: center;
+  justify-content: flex-end;
+}
+
+#grey{
+  color: grey;
+  font-size: 8px;
+}
+
+
+.loading {
+  width: 80px;
+  height: 50px;
+  position: relative;
+}
+  .p1 {
+     top: 0;
+     padding: 0;
+     margin: 0;
+     color: rgb(35, 150, 238);
+     font-family: inherit;
+     animation: text 3.5s ease both infinite;
+     font-size: 12px;
+     letter-spacing: 1px;
+  }
+     @keyframes text {
+        0% {
+           letter-spacing: 1px;
+           transform: translateX(0px);
+        }
+
+        40% {
+           letter-spacing: 2px;
+           transform: translateX(26px);
+        }
+
+        80% {
+           letter-spacing: 1px;
+           transform: translateX(32px);
+        }
+
+        90% {
+           letter-spacing: 2px;
+           transform: translateX(0px);
+        }
+
+        100% {
+           letter-spacing: 1px;
+           transform: translateX(0px);
+        }
+     }
+  
+  .span1 {
+     background-color: rgb(35, 150, 238);
+     border-radius: 50px;
+     display: block;
+     height: 16px;
+     width: 16px;
+     bottom: 0;
+     position: absolute;
+     transform: translateX(64px);
+     animation: loading 3.5s ease both infinite;
+  }
+     &:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgb(35, 150, 238);
+        border-radius: inherit;
+        animation: loading2 3.5s ease both infinite;
+     }
+
+     @keyframes loading {
+        0% {
+           width: 16px;
+           transform: translateX(0px);
+        }
+
+        40% {
+           width: 100%;
+           transform: translateX(0px);
+        }
+
+        80% {
+           width: 16px;
+           transform: translateX(64px);
+        } 
+
+        90% {
+           width: 100%;
+           transform: translateX(0px);
+        }
+
+        100% {
+           width: 16px;
+           transform: translateX(0px);
+        }
+     }
+     @keyframes loading2 {
+        0% {
+           transform: translateX(0px);
+           width: 16px;
+        }
+
+        40% {
+           transform: translateX(0%);
+           width: 80%;
+        }
+
+       80% {
+           width: 100%;
+           transform: translateX(0px);
+        }
+
+        90% {
+           width: 80%;
+        transform: translateX(15px);
+        }
+        100% {
+           transform: translateX(0px);
+           width: 16px;
+        }
+     }
+
+
+.loader {
+  border: 3px solid #e2e2e0;
+  border-radius: 50%;
+  border-top: 3px solid #000;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  text-align: center;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

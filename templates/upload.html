@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row" id="center">
+    <div class="">
+      <h3 id="front">Remove Image Background 100% Automatically and Free</h3>
+    </div>
+    <div class="">
+      <div id="">
+        <form method=post enctype=multipart/form-data>
+          <label id="upload" class="custom-file-upload btn btn-primary">
+            <input type="file" name=file accept="image/png, image/jpeg" onchange=displayButton() />Upload an image file
+          </label>
+          <p id='show'> </p>
+          <div id="upload-button" hidden>
+            <input type=submit value=Upload class="btn btn-primary" onclick=loadAnimation() />
+          </div>
+        </form>
+        <section class="d-flex justify-content-center">
+          <div id="content">
+            <div id="loading">
+              <p id="p1" hidden>Processing...</p>
+              <span id="span1"></span>
+            </div>
+          </div>
+        </section>
+      </div>   
+    </div>
+    <div class="">
+      <img id="front-img" src="/static/main.png" width="400">
+    </div>
+  </div>
+</div>
+<script>
+  function displayButton(){
+    // document.getElementById('show').innerHTML = "File uploaded";
+    let showButton = document.getElementById("upload-button");
+    showButton.removeAttribute("hidden");
+  }
+
+  function loadAnimation(){
+    let showAnime = document.getElementById("content");
+    let showAnime2 = document.getElementById("loading");
+    let showAnime3 = document.getElementById("p1");
+    let showAnime4 = document.getElementById("span1");
+
+    showAnime.setAttribute("class", "content");
+    showAnime2.setAttribute("class", "loading");
+    showAnime3.setAttribute("class", "p1");
+    showAnime3.removeAttribute("hidden");
+    showAnime4.setAttribute("class", "span1");
+  }
+</script>
+
+  <!-- <label class="custom-file-upload btn btn-primary">
+    <input type="file" name=file accept="image/png, image/jpeg"/>
+   </label> -->
+
+
+{% endblock %}
+  
