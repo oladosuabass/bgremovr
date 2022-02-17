@@ -9,16 +9,15 @@ from io import BytesIO
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-import pprint
 
 app = Flask(__name__)
 
 UPLOAD_FOLDER = ''
 
 # export API_KEY=
-removebg_api_key = os.environ.get("API_KEY1")
-cloudinary_api_key = os.environ.get("API_KEY2")
-cloudinary_api_secret = os.environ.get("API_KEY3")
+removebg_api_key = os.environ.get("removebg_api")
+cloudinary_api_key = os.environ.get("cloudinary_api")
+cloudinary_api_secret = os.environ.get("cloudinary_api_secret")
 
 
 @app.route('/', methods=['GET', 'POST'])
